@@ -1,0 +1,26 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+@include mat.core();
+
+$theme: mat.define-light-theme(
+    mat.define-palette(mat.$light-blue-palette, 900, 600, 900),
+    mat.define-palette(mat.$light-green-palette),
+    mat.define-palette(mat.$deep-orange-palette, 400)
+);
+
+@include mat.core-theme($theme);
+@include mat.toolbar-theme($theme);
+@include mat.button-theme($theme);
+@include mat.select-theme($theme);
+@include mat.menu-theme($theme);
+@include mat.card-theme($theme);
+@include mat.list-theme($theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; background-color: #feffff; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
